@@ -9,6 +9,8 @@ import UIKit
 
 final class WatchListViewController: UIViewController {
 
+    private var searchTimer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -42,16 +44,27 @@ extension WatchListViewController: UISearchResultsUpdating {
               let resultsVC = searchController.searchResultsController as? SearchResultsViewController,
                   !query.trimmingCharacters(in: .whitespaces).isEmpty else { return }
         
-        resultsVC.update(with: ["Google"])
+        searchTimer?.invalidate()
         
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { t in
+            APICaller.shared.search(query: query) { result in
+                switch result {
+                case .success(let responseModel):
+                    DispatchQueue.main.async {
+                        resultsVC.update(with: responseModel.result)
+                    }
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+        })
     }
-    
 }
 
 extension WatchListViewController: SearchResultsViewControllerDelegate {
     
-    func searchResultsViewControllerDelegateDidSelect(searchResult: String) {
-        
+    func searchResultsViewControllerDelegateDidSelect(searchResult: Stock) {
+        print("Did Select : \(searchResult.displaySymbol)")
     }
     
 }

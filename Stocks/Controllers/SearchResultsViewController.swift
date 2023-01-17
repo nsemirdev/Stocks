@@ -8,14 +8,14 @@
 import UIKit
 
 protocol SearchResultsViewControllerDelegate: AnyObject {
-    func searchResultsViewControllerDelegateDidSelect(searchResult: String)
+    func searchResultsViewControllerDelegateDidSelect(searchResult: Stock)
 }
 
 final class SearchResultsViewController: UIViewController {
 
     weak var delegate: SearchResultsViewControllerDelegate?
     
-    private var results = [String]()
+    private var results = [Stock]()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -40,7 +40,7 @@ final class SearchResultsViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    public func update(with results: [String]) {
+    public func update(with results: [Stock]) {
         self.results = results
         tableView.reloadData()
     }
@@ -49,20 +49,20 @@ final class SearchResultsViewController: UIViewController {
 extension SearchResultsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath)
         
-        cell.textLabel?.text = "AAPL"
-        cell.detailTextLabel?.text = "Apple Inc."
+        cell.textLabel?.text = results[indexPath.row].displaySymbol
+        cell.detailTextLabel?.text = results[indexPath.row].description
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.searchResultsViewControllerDelegateDidSelect(searchResult: "AAPL")
+        delegate?.searchResultsViewControllerDelegateDidSelect(searchResult: results[indexPath.row])
     }
 }
