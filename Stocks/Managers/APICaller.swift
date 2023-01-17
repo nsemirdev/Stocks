@@ -38,10 +38,23 @@ final class APICaller {
                 "from": DateFormatter.newsDateFormatter.string(from: oneMonthBack),
                 "to": DateFormatter.newsDateFormatter.string(from: today)
             ])
+            
             request(url: url, expecting: [NewsStory].self, completion: completion)
         }
+    }
+    
+    public func markedData(for symbol: String, numberOfDays: TimeInterval = 7, completion: @escaping (Result<MarketDataResponse, Error>) -> Void) {
+        let today = Date()
+        let prior = today.addingTimeInterval(-60 * 60 * 24 * numberOfDays)
+        let url = url(for: .marketData,
+                      queryParams: [
+                        "symbol": symbol,
+                        "resolution": "1",
+                        "from": "\(Int(prior.timeIntervalSince1970))",
+                        "to": "\(Int(today.timeIntervalSince1970))"
+                      ])
         
-        
+        request(url: url, expecting: MarketDataResponse.self, completion: completion)
     }
     
     // MARK: - Private
@@ -50,11 +63,12 @@ final class APICaller {
         case search
         case topStories = "news"
         case companyNews = "company-news"
+        case marketData = "stock/candle"
     }
     
     private enum APIError: Error {
         case invalidURL
-        case canNotDecodeData
+        case canNotDecodeData(String)
         case canNotGetDataFromServer
     }
     
@@ -89,7 +103,7 @@ final class APICaller {
                 let result = try JSONDecoder().decode(expecting, from: data)
                 completion(.success(result))
             } catch {
-                completion(.failure(APIError.canNotDecodeData))
+                completion(.failure(APIError.canNotDecodeData(error.localizedDescription)))
             }
         }.resume()
     }

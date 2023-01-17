@@ -28,6 +28,7 @@
 		2D8522122976303B005592BE /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8522112976303B005592BE /* HapticsManager.swift */; };
 		2D8522152976390D005592BE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8522142976390D005592BE /* UIView+.swift */; };
 		2D85221729763B84005592BE /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85221629763B84005592BE /* SearchResultTableViewCell.swift */; };
+		2DF2CF3F2976BFF600412878 /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF2CF3E2976BFF600412878 /* MarketDataResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2D8522112976303B005592BE /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		2D8522142976390D005592BE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2D85221629763B84005592BE /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		2DF2CF3E2976BFF600412878 /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				2D3B146A297643A200F4B664 /* SearchResponse.swift */,
 				2D3B14732976A4BB00F4B664 /* NewsStory.swift */,
+				2DF2CF3E2976BFF600412878 /* MarketDataResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				2D8522122976303B005592BE /* HapticsManager.swift in Sources */,
 				2D85221729763B84005592BE /* SearchResultTableViewCell.swift in Sources */,
+				2DF2CF3F2976BFF600412878 /* MarketDataResponse.swift in Sources */,
 				2D85220C29762EB0005592BE /* StockDetailsViewController.swift in Sources */,
 				2D8521ED29762D0E005592BE /* AppDelegate.swift in Sources */,
 				2D85220829762E99005592BE /* NewsViewController.swift in Sources */,
