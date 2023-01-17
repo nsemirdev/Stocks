@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		2D8521ED29762D0E005592BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8521EC29762D0E005592BE /* AppDelegate.swift */; };
 		2D8521EF29762D0E005592BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8521EE29762D0E005592BE /* SceneDelegate.swift */; };
-		2D8521F129762D0E005592BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8521F029762D0E005592BE /* ViewController.swift */; };
 		2D8521F629762D10005592BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D8521F529762D10005592BE /* Assets.xcassets */; };
 		2D8521F929762D10005592BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8521F729762D10005592BE /* LaunchScreen.storyboard */; };
+		2D85220629762E7F005592BE /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85220529762E7F005592BE /* WatchListViewController.swift */; };
+		2D85220829762E99005592BE /* TopStoriesNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85220729762E99005592BE /* TopStoriesNewsViewController.swift */; };
+		2D85220A29762EA5005592BE /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85220929762EA5005592BE /* SearchResultsViewController.swift */; };
+		2D85220C29762EB0005592BE /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85220B29762EB0005592BE /* StockDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D8521E929762D0E005592BE /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8521EC29762D0E005592BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D8521EE29762D0E005592BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D8521F029762D0E005592BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D8521F529762D10005592BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D8521F829762D10005592BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D8521FA29762D10005592BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D85220529762E7F005592BE /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
+		2D85220729762E99005592BE /* TopStoriesNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesNewsViewController.swift; sourceTree = "<group>"; };
+		2D85220929762EA5005592BE /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		2D85220B29762EB0005592BE /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,57 @@
 		2D8521EB29762D0E005592BE /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
-				2D8521EC29762D0E005592BE /* AppDelegate.swift */,
-				2D8521EE29762D0E005592BE /* SceneDelegate.swift */,
-				2D8521F029762D0E005592BE /* ViewController.swift */,
-				2D8521F529762D10005592BE /* Assets.xcassets */,
-				2D8521F729762D10005592BE /* LaunchScreen.storyboard */,
+				2D85220429762DFA005592BE /* Other */,
+				2D85220329762DF0005592BE /* Managers */,
+				2D85220229762DDE005592BE /* Controllers */,
+				2D85220129762DD9005592BE /* Views */,
+				2D85220029762DCD005592BE /* Models */,
 				2D8521FA29762D10005592BE /* Info.plist */,
 			);
 			path = Stocks;
+			sourceTree = "<group>";
+		};
+		2D85220029762DCD005592BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2D85220129762DD9005592BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D8521F729762D10005592BE /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2D85220229762DDE005592BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2D85220529762E7F005592BE /* WatchListViewController.swift */,
+				2D85220729762E99005592BE /* TopStoriesNewsViewController.swift */,
+				2D85220929762EA5005592BE /* SearchResultsViewController.swift */,
+				2D85220B29762EB0005592BE /* StockDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2D85220329762DF0005592BE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2D85220429762DFA005592BE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2D8521F529762D10005592BE /* Assets.xcassets */,
+				2D8521EC29762D0E005592BE /* AppDelegate.swift */,
+				2D8521EE29762D0E005592BE /* SceneDelegate.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D8521F129762D0E005592BE /* ViewController.swift in Sources */,
+				2D85220C29762EB0005592BE /* StockDetailsViewController.swift in Sources */,
 				2D8521ED29762D0E005592BE /* AppDelegate.swift in Sources */,
+				2D85220829762E99005592BE /* TopStoriesNewsViewController.swift in Sources */,
+				2D85220629762E7F005592BE /* WatchListViewController.swift in Sources */,
 				2D8521EF29762D0E005592BE /* SceneDelegate.swift in Sources */,
+				2D85220A29762EA5005592BE /* SearchResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
