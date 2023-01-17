@@ -18,6 +18,7 @@
 		2D85220E29763014005592BE /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85220D29763014005592BE /* APICaller.swift */; };
 		2D8522102976302D005592BE /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85220F2976302D005592BE /* PersistenceManager.swift */; };
 		2D8522122976303B005592BE /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8522112976303B005592BE /* HapticsManager.swift */; };
+		2D8522152976390D005592BE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8522142976390D005592BE /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2D85220D29763014005592BE /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		2D85220F2976302D005592BE /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		2D8522112976303B005592BE /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		2D8522142976390D005592BE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		2D8521EB29762D0E005592BE /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
+				2D852213297638E8005592BE /* Extensions */,
 				2D85220429762DFA005592BE /* Other */,
 				2D85220329762DF0005592BE /* Managers */,
 				2D85220229762DDE005592BE /* Controllers */,
@@ -120,6 +123,14 @@
 				2D8521EE29762D0E005592BE /* SceneDelegate.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		2D852213297638E8005592BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D8522142976390D005592BE /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 				2D85220C29762EB0005592BE /* StockDetailsViewController.swift in Sources */,
 				2D8521ED29762D0E005592BE /* AppDelegate.swift in Sources */,
 				2D85220829762E99005592BE /* TopStoriesNewsViewController.swift in Sources */,
+				2D8522152976390D005592BE /* UIView+.swift in Sources */,
 				2D8522102976302D005592BE /* PersistenceManager.swift in Sources */,
 				2D85220E29763014005592BE /* APICaller.swift in Sources */,
 				2D85220629762E7F005592BE /* WatchListViewController.swift in Sources */,
