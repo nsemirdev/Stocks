@@ -20,7 +20,8 @@ final class APICaller {
     // MARK: - Public
     
     public func search(query: String, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
-        guard let url = url(for: .search, queryParams: ["q": query]) else { return }
+        guard let safeQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        guard let url = url(for: .search, queryParams: ["q": safeQuery]) else { return }
         request(url: url, expecting: SearchResponse.self, completion: completion)
     }
     
