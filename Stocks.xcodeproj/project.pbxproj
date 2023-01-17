@@ -19,6 +19,7 @@
 		2D8522102976302D005592BE /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85220F2976302D005592BE /* PersistenceManager.swift */; };
 		2D8522122976303B005592BE /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8522112976303B005592BE /* HapticsManager.swift */; };
 		2D8522152976390D005592BE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8522142976390D005592BE /* UIView+.swift */; };
+		2D85221729763B84005592BE /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85221629763B84005592BE /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2D85220F2976302D005592BE /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		2D8522112976303B005592BE /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		2D8522142976390D005592BE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		2D85221629763B84005592BE /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2D8521F729762D10005592BE /* LaunchScreen.storyboard */,
+				2D85221629763B84005592BE /* SearchResultTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D8522122976303B005592BE /* HapticsManager.swift in Sources */,
+				2D85221729763B84005592BE /* SearchResultTableViewCell.swift in Sources */,
 				2D85220C29762EB0005592BE /* StockDetailsViewController.swift in Sources */,
 				2D8521ED29762D0E005592BE /* AppDelegate.swift in Sources */,
 				2D85220829762E99005592BE /* TopStoriesNewsViewController.swift in Sources */,
