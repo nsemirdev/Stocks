@@ -25,10 +25,31 @@ final class APICaller {
         request(url: url, expecting: SearchResponse.self, completion: completion)
     }
     
+    public func news(for type: NewsViewController.`Type`, completion: @escaping (Result<[NewsStory], Error>) -> Void) {
+        switch type {
+        case .topStories:
+            let url = url(for: .topStories, queryParams: ["category": "general"])
+            request(url: url, expecting: [NewsStory].self, completion: completion)
+        case .company(let symbol):
+            let today = Date()
+            let oneMonthBack = today.addingTimeInterval(-(60 * 60 * 24 * 30))
+            let url = url(for: .companyNews, queryParams: [
+                "symbol": symbol,
+                "from": DateFormatter.newsDateFormatter.string(from: oneMonthBack),
+                "to": DateFormatter.newsDateFormatter.string(from: today)
+            ])
+            request(url: url, expecting: [NewsStory].self, completion: completion)
+        }
+        
+        
+    }
+    
     // MARK: - Private
     
     private enum Endpoint: String {
         case search
+        case topStories = "news"
+        case companyNews = "company-news"
     }
     
     private enum APIError: Error {

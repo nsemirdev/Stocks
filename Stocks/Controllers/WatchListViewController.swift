@@ -6,16 +6,30 @@
 //
 
 import UIKit
+import FloatingPanel
 
 final class WatchListViewController: UIViewController {
 
     private var searchTimer: Timer?
+    private var panel: FloatingPanelController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setUpSearchController()
         setUpTitleView()
+        setUpFloatingPanel()
+    }
+    
+    private func setUpFloatingPanel() {
+        let vc = NewsViewController(type: .topStories)
+        
+        panel = FloatingPanelController()
+        panel?.surfaceView.backgroundColor = .secondarySystemBackground
+        panel?.set(contentViewController: vc)
+        panel?.addPanel(toParent: self)
+        panel?.delegate = self
+        panel?.track(scrollView: vc.tableView)
     }
     
     private func setUpTitleView() {
@@ -72,4 +86,10 @@ extension WatchListViewController: SearchResultsViewControllerDelegate {
         present(navVC, animated: true)
     }
     
+}
+
+extension WatchListViewController: FloatingPanelControllerDelegate {
+    func floatingPanelDidMove(_ fpc: FloatingPanelController) {
+        navigationItem.titleView?.isHidden = fpc.state == .full
+    }
 }
